@@ -1,5 +1,5 @@
 <x-layout title="Novo Cliente">
-    <form action="/clientes/salvar" method="post">
+    <form action="{{ route('clientes.store') }}" method="post">
         @csrf 
         <div class="mb-3">
             <label for="name" class="form-label">Nome do Cliente</label>

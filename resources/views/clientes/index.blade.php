@@ -1,5 +1,5 @@
 <x-layout title="Clientes">
-    <a href="/clientes/criar" class="btn btn-dark mb-2">Adicionar cliente</a>
+    <a href="{{ route('clientes.create') }}" class="btn btn-dark mb-2">Adicionar cliente</a>
 
     <ul class="list-group">
         @foreach ($clientes as $cliente)

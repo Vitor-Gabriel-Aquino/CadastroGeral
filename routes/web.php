@@ -18,6 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/clientes', [ClientesController::class, 'index']);
-Route::get('/clientes/criar', [ClientesController::class, 'create']);
-Route::post('/clientes/salvar', [ClientesController::class, 'store']);
+Route::resource('/clientes', ClientesController::class);
+

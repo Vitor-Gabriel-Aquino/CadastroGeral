@@ -21,18 +21,8 @@ class ClientesController extends Controller
     }
 
     public function store(Request $request) {
-        $nomeCliente = $request->input('name');
-        $cliente = new Cliente();
-        $cliente->name = $nomeCliente;
-
-
-        $emailCliente = $request->input('email');
-        $cliente->email = $emailCliente;
-
-
-        $cpfCliente = $request->input('cpf');
-        $cliente->cpf = $cpfCliente;
-        $cliente->save();
-        return redirect('/clientes');
+        
+        Cliente::create($request->all());
+        return to_route('clientes.index');
     }
 }
