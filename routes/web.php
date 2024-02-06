@@ -18,5 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/clientes', ClientesController::class);
-
+Route::resource('/clientes', ClientesController::class)->only(['index', 'create', 'store', 'destroy']);
