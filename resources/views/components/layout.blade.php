@@ -22,6 +22,7 @@
         }
     </style>
 <body>
+    
     <div class="container">
         <h1>{{$title}}</h1>
 
