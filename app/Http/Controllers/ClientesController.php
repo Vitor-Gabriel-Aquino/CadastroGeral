@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreUpdateSupport;
 use Illuminate\Support\Facades\DB;
 use App\Models\Cliente;
 
@@ -49,6 +50,22 @@ class ClientesController extends Controller
 
         return redirect()->route('clientes.index')
             ->with('mensagem.sucesso', "Cliente {$cliente->name} removido com sucesso!");
+<<<<<<< HEAD
+    }
+
+    public function edit(Cliente $cliente) {
+        return view('clientes.edit')->with('cliente', $cliente);
+    }
+
+    public function update(Cliente $cliente, Request $request) {
+        
+        $cliente->update($request->all());
+
+
+        return to_route('clientes.index')
+            ->with('mensagem.sucesso', "Cliente {$cliente->name} atualizado com sucesso!");
+=======
+>>>>>>> 64446ffb95e7da55e4e14319658cc3d5460dd132
     }
 
     public function edit(Cliente $cliente) {
@@ -64,3 +81,4 @@ class ClientesController extends Controller
             ->with('mensagem.sucesso', "Cliente {$cliente->name} atualizado com sucesso!");
     }
 }
+

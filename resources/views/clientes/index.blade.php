@@ -1,5 +1,5 @@
 <x-layout title="Clientes">
-    <a href="{{ route('clientes.create') }}" class="btn btn-dark mb-2">Adicionar cliente</a>
+    
 
     @isset($mensagemSucesso)
         <div class="alert alert-success">
@@ -10,7 +10,11 @@
     <ul class="list-group">
         @foreach ($clientes as $cliente)
             <li class="list-group-item d-flex justify-content-between align-items-center">{{$cliente->name}}
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 64446ffb95e7da55e4e14319658cc3d5460dd132
                 <span class="d-flex">
                     <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-primary btn-sm">
                         E
@@ -26,5 +30,7 @@
             </li>
         @endforeach
     </ul>
+    <br><br>
+    <a href="{{ route('clientes.create') }}" class="btn btn-dark mb-2">Adicionar Pessoa Fisíca</a>
 
 </x-layout>

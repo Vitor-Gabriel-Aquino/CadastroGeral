@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('pessoajuridica', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('cpf',14);
-            $table->date('birthdate')->nullable();
-            $table->string('cellphone')->nullable();
-            $table->string('telephone')->nullable();
+            $table->string('cnpj', 18);
+            $table->string('company_phone')->nullable();
             $table->string('address')->nullable();
             $table->string('complement')->nullable();
             $table->string('number')->nullable();
@@ -26,7 +23,10 @@ return new class extends Migration
             $table->string('zipCode')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
+            $table->unsignedBigInteger('id_funcionario');
+            $table->foreign('id_funcionario')->references('id')->on('funcionarios')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+            
         });
     }
 
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('pessoajuridica');
     }
 };
