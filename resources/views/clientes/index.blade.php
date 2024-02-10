@@ -13,7 +13,7 @@
                 <th>Nome</th>
                 <th>Email</th>
                 <th>CPF</th>
-                <th>Data de Aniversário</th>
+                <th>Data de Nascimento</th>
                 <th>Celular</th>
                 <th>Endereço</th>
                 <th>CEP</th>

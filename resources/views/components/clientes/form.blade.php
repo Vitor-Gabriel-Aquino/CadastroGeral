@@ -37,7 +37,7 @@
             </div>
             <div class="col">
                 <label for="birthdate" class="form-label">Data de Nascimento</label>
-                <input type="text" class="form-control form-control-sm"
+                <input type="date" class="form-control form-control-sm"
                  id="birthday" 
                  name="birthday"
                  @isset($birthday)value='{{ $birthday }}' @endisset>

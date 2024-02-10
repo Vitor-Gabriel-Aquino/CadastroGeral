@@ -37,15 +37,11 @@
     <div class="background-imagem"></div>
     <div class="container-background depth-div">
         <div class="centro">
-            <a href="{{ route('clientes.index') }}" class="btn btn-dark mb-2"><strong>Visualizar Clientes</strong></a>
+            <a href="{{ route('pessoasjuridicas.index') }}" class="btn btn-dark mb-2"><strong>Pessoas Juridicas</strong></a>
         </div>
 
         <div class="centro">
-            <a href="{{ route('pessoasjuridicas.index') }}" class="btn btn-dark mb-2"><strong>Cadastrar Pessoa Juridica</strong></a>
-        </div>
-
-        <div class="centro">
-            <a href="{{ route('clientes.create') }}" class="btn btn-dark mb-2"><strong>Cadastrar Pessoa Fisica</strong></a>
+            <a href="{{ route('clientes.index') }}" class="btn btn-dark mb-2"><strong>Pessoas Fisicas</strong></a>
         </div>
 
         <div class="centro">
