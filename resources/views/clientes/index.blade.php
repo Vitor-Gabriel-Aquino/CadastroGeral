@@ -26,13 +26,13 @@
                     <td>{{ $cliente->name }}</td>
                     <td>{{ $cliente->email }}</td>
                     <td>{{ $cliente->cpf }}</td>
-                    <td>{{ $cliente->birthdate }}</td>
+                    <td>{{ \Carbon\Carbon::parse($cliente->birthday)->format('d/m/Y') }}</td>
                     <td>{{ $cliente->cellphone }}</td>
                     <td>{{ $cliente->address }}</td>
                     <td>{{ $cliente->zipCode }}</td>
                     <td>
-                        <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-primary btn-sm">Editar</a>
-                        <form action="{{ route('clientes.destroy', $cliente->id) }}" method="post" class="ms-2">
+                        <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-primary btn-sm w-full">Editar</a>
+                        <form action="{{ route('clientes.destroy', $cliente->id) }}" method="post" class="">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Excluir</button>

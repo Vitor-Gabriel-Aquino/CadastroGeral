@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\FuncionarioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PessoaJuridicaController;
 
@@ -21,4 +22,4 @@ Route::get('/', function () {
 
 Route::resource('/clientes', ClientesController::class)->except(['show']);
 Route::resource('/pessoasjuridicas', PessoaJuridicaController::class)->except(['show']);
-Route::resource('/funcionarios', FuncionarioController::class)->except(['index', 'show']);
+Route::resource('/funcionarios', FuncionarioController::class)->except(['show']);

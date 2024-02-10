@@ -1,13 +1,14 @@
-<x-layout title="Editar Cliente: {{ $pessoaJuridica->name }}">
-    <x-pessoasjuridicas.form :action="route('pessoasjuridicas.update', $pessoaJuridica->id)" 
-    :name="$pessoaJuridica->name"
-    :cnpj="$pessoaJuridica->cnpj"
-    :company_phone="$pessoaJuridica->company_phone"
-    :address="$pessoaJuridica->address"
-    :complement="$pessoaJuridica->complement"
-    :number="$pessoaJuridica->number"
-    :neighborhood="$pessoaJuridica->neighborhood"
+<x-layout title="Editar Cliente: {{ $pessoajuridica->name }}">
+    <x-pessoasjuridicas.pessoaJuridicaForm :action="route('pessoasjuridicas.update', $pessoajuridica->id)" 
+    :name="$pessoajuridica->name"
+    :cnpj="$pessoajuridica->cnpj"
+    :email="$pessoajuridica->email"
+    :company_phone="$pessoajuridica->company_phone"
+    :address="$pessoajuridica->address"
+    :complement="$pessoajuridica->complement"
+    :number="$pessoajuridica->number"
+    :neighborhood="$pessoajuridica->neighborhood"
     :zipCode="$pessoaJuridica->zipCode"
-    :city="$pessoaJuridica->city"
-    :state="$pessoaJuridica->state"/>
+    :city="$pessoajuridica->city"
+    :state="$pessoajuridica->state"/>
 </x-layout>

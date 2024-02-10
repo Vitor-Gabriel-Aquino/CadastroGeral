@@ -9,30 +9,58 @@
     
 
         <!-- Informações Pessoais -->
-<div class="row">
-    <div class="col-lg-3">
-                <label for="name" class="form-label">Nome da Empresa</label>
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="name" class="form-label">Nome do Cliente</label>
                 <input type="text" class="form-control form-control-sm"  
                 id="name" 
                 name="name"
-                @isset($name)value="{{ $name }}" @endisset>
-    </div>
+                @isset($name)value="{{ $name }}" @endisset> 
+            </div>
+            <div class="col-lg-9">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control form-control-sm"
+                 id="email" 
+                 name="email"
+                 @isset($email)value='{{ $email }}' @endisset>
+            </div>
+        </div>
 
-    <div class="col-lg-3">
-                <label for="cnpj" class="form-label">CNPJ</label>
+        <!-- Dados de Identificação -->
+        <div class="row">
+            <div class="col">
+                <label for="cpf" class="form-label">CPF</label>
                 <input type="text" class="form-control form-control-sm"
-                 id="cnpj" 
-                 name="cnpj"
-                 @isset($cnpj)value='{{ $cnpj }}' @endisset>
-     </div>
-     <div class="col-lg-6">
-                <label for="company_phone" class="form-label">Celular</label>
+                 id="cpf" 
+                 name="cpf"
+                 @isset($cpf)value='{{ $cpf }}' @endisset>
+            </div>
+            <div class="col">
+                <label for="birthdate" class="form-label">Data de Nascimento</label>
+                <input type="date" class="form-control form-control-sm"
+                 id="birthday" 
+                 name="birthday"
+                 @isset($birthday)value='{{ $birthday }}' @endisset>
+            </div>
+        </div>
+
+        <!-- Contato -->
+        <div class="row">
+            <div class="col">
+                <label for="cellphone" class="form-label">Celular</label>
                 <input type="text" class="form-control form-control-sm"
-                 id="company_phone" 
-                 name="company_phone"
-                 @isset($company_phone)value='{{ $company_phone }}' @endisset>
-     </div>
-</div>
+                 id="cellphone" 
+                 name="cellphone"
+                 @isset($cellphone)value='{{ $cellphone }}' @endisset>
+            </div>
+            <div class="col">
+                <label for="telephone" class="form-label">Telefone</label>
+                <input type="text" class="form-control form-control-sm"
+                 id="telephone" 
+                 name="telephone"
+                 @isset($telephone)value='{{ $telephone }}' @endisset>
+            </div>
+        </div>
 
         <!-- Endereço -->
         <div class="row">
@@ -94,25 +122,9 @@
                  @isset($state)value='{{ $state }}' @endisset>
             </div>
         </div>
-<!-- Botão de Adicionar Funcionário -->
-<div class="row">
-    <div class="col">
-        <button type="button" id="addEmployeeButton" class="btn btn-secondary">Adicionar Funcionário</button>
-    </div>
-</div>
-
-<script>
-    document.getElementById('addEmployeeButton').addEventListener('click', function() {
-        // Redirecionar para outra página
-        window.location.href = '{{ route("funcionarios.create") }}'; 
-    });
-</script>
-
-
-
 
         <!-- Botão de Submissão -->
-        <div class="row">
+        <div class="row mt-3">
             <div class="col">
                 <button class="btn btn-primary">Adicionar Cliente</button>
             </div>

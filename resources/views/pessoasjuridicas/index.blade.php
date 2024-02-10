@@ -11,11 +11,11 @@
         <thead>
             <tr>
                 <th>Nome</th>
+                <th>CNPJ</th>
                 <th>Email</th>
-                <th>CPF</th>
-                <th>Data de Aniversário</th>
                 <th>Celular</th>
                 <th>Endereço</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -23,12 +23,13 @@
                 <tr>
                     <td>{{ $cliente->name }}</td>
                     <td>{{ $cliente->cnpj }}</td>
+                    <td>{{ $cliente->email }}</td>
                     <td>{{ $cliente->company_phone }}</td>
                     <td>{{ $cliente->address }}</td>
-                    <td>{{ $cliente->zipCode }}</td>
+
                     <td>
                         <a href="{{ route('pessoasjuridicas.edit', $cliente->id) }}" class="btn btn-primary btn-sm">Editar</a>
-                        <form action="{{ route('pessoasjuridicas.destroy', $cliente->id) }}" method="post" class="ms-2">
+                        <form action="{{ route('pessoasjuridicas.destroy', $cliente->id) }}" method="post" class="">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Excluir</button>

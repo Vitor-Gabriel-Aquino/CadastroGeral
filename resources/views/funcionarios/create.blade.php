@@ -1,3 +1,3 @@
 <x-layout title="Funcionario">
-    <x-funcionarios.form3 :action="route('funcionarios.store')"/>
+    <x-funcionarios.funcionarioForm :action="route('funcionarios.store')"/>
 </x-layout>
