@@ -1,5 +1,5 @@
-<x-layout title="Pessoas Fisicas">
-    <a href="{{ route('clientes.create') }}" class="btn btn-dark mb-2">Adicionar cliente</a>
+<x-layout title="Pessoas Juridicas">
+    <a href="{{ route('pessoasjuridicas.create') }}" class="btn btn-dark mb-2">Adicionar cliente</a>
 
     @isset($mensagemSucesso)
         <div class="alert alert-success">
@@ -16,23 +16,19 @@
                 <th>Data de Aniversário</th>
                 <th>Celular</th>
                 <th>Endereço</th>
-                <th>CEP</th>
-                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($clientes as $cliente)
+            @foreach ($pessoajuridica as $cliente)
                 <tr>
                     <td>{{ $cliente->name }}</td>
-                    <td>{{ $cliente->email }}</td>
-                    <td>{{ $cliente->cpf }}</td>
-                    <td>{{ $cliente->birthdate }}</td>
-                    <td>{{ $cliente->cellphone }}</td>
+                    <td>{{ $cliente->cnpj }}</td>
+                    <td>{{ $cliente->company_phone }}</td>
                     <td>{{ $cliente->address }}</td>
                     <td>{{ $cliente->zipCode }}</td>
                     <td>
-                        <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-primary btn-sm">Editar</a>
-                        <form action="{{ route('clientes.destroy', $cliente->id) }}" method="post" class="ms-2">
+                        <a href="{{ route('pessoasjuridicas.edit', $cliente->id) }}" class="btn btn-primary btn-sm">Editar</a>
+                        <form action="{{ route('pessoasjuridicas.destroy', $cliente->id) }}" method="post" class="ms-2">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Excluir</button>

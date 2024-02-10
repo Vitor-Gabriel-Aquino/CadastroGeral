@@ -41,7 +41,11 @@
         </div>
 
         <div class="centro">
-            <a href="{{ route('clientes.create') }}" class="btn btn-dark mb-2"><strong>Cadastrar Clientes</strong></a>
+            <a href="{{ route('pessoasjuridicas.index') }}" class="btn btn-dark mb-2"><strong>Cadastrar Pessoa Juridica</strong></a>
+        </div>
+
+        <div class="centro">
+            <a href="{{ route('clientes.create') }}" class="btn btn-dark mb-2"><strong>Cadastrar Pessoa Fisica</strong></a>
         </div>
 
         <div class="centro">

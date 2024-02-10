@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientesController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PessoaJuridicaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/clientes', ClientesController::class)->except(['show']);
+Route::resource('/pessoasjuridicas', PessoaJuridicaController::class)->except(['show']);

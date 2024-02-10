@@ -10,7 +10,7 @@ class PessoaJuridicaController extends Controller
 {
     public function index(Request $request)
     {
-        $pessoaJuridica = PessoaJuridica::query()
+        $pessoajuridica = PessoaJuridica::query()
             // ->where('ativo', true)  // Adiciona a condição para clientes ativos
             ->orderBy('name')
             ->get();
@@ -18,50 +18,50 @@ class PessoaJuridicaController extends Controller
         $mensagemSucesso = session('mensagem.sucesso');
 
 
-        return view('clientes.index')->with('pessoasjuridicas', $pessoaJuridica)->with('mensagemSucesso', $mensagemSucesso);
+        return view('pessoasjuridicas.index')->with('pessoajuridica', $pessoajuridica)->with('mensagemSucesso', $mensagemSucesso);
     }
 
     public function create(Request $request)
     {
 
-        return view('clientes.juridico');
+        return view('pessoasjuridicas.create');
     }
 
     public function store(Request $request)
     {
 
-        $pessoaJuridica = PessoaJuridica::create($request->all());
+        $pessoajuridica = PessoaJuridica::create($request->all());
 
-        return to_route('clientes.index')
-            ->with('mensagem.sucesso', "Cliente {$pessoaJuridica->name} adicionado com sucesso!");
+        return to_route('pessoasjuridicas.index')
+            ->with('mensagem.sucesso', "Cliente {$pessoajuridica->name} adicionado com sucesso!");
     }
 
-    public function destroy(PessoaJuridica $pessoaJuridica)
+    public function destroy(PessoaJuridica $pessoajuridica)
     {
 
-        // $pessoaJuridica = PessoaJuridica::find($request->pessoajuridica);
+        // $pessoajuridica = PessoaJuridica::find($request->pessoajuridica);
 
-        // if ($pessoaJuridica) {
-        //     $pessoaJuridica->update(['ativo' => false]);
+        // if ($pessoajuridica) {
+        //     $pessoajuridica->update(['ativo' => false]);
         // }
 
-        $pessoaJuridica->delete();
+        $pessoajuridica->delete();
 
-        return redirect()->route('clientes.index')
-            ->with('mensagem.sucesso', "Cliente {$pessoaJuridica->name} removido com sucesso!");
+        return redirect()->route('pessoasjuridicas.index')
+            ->with('mensagem.sucesso', "Cliente {$pessoajuridica->name} removido com sucesso!");
     }
 
-    public function edit(PessoaJuridica $pessoaJuridica) {
-        return view('clientes.edit')->with('pessoasjuridicas', $pessoaJuridica);
+    public function edit(PessoaJuridica $pessoajuridica) {
+        return view('pessoasjuridicas.edit')->with('pessoajuridica', $pessoajuridica);
     }
 
-    public function update(PessoaJuridica $pessoaJuridica, Request $request) {
+    public function update(PessoaJuridica $pessoajuridica, Request $request) {
         
-        $pessoaJuridica->update($request->all());
+        $pessoajuridica->update($request->all());
 
 
-        return to_route('clientes.index')
-            ->with('mensagem.sucesso', "Cliente {$pessoaJuridica->name} atualizado com sucesso!");
+        return to_route('pessoasjuridicas.index')
+            ->with('mensagem.sucesso', "Cliente {$pessoajuridica->name} atualizado com sucesso!");
     }
 }
 
