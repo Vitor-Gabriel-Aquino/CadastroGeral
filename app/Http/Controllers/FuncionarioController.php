@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Cliente;
+use App\Models\Funcionario;
 
-class ClientesController extends Controller
+class FuncionarioController extends Controller
 {
     public function index(Request $request)
     {
@@ -64,3 +64,4 @@ class ClientesController extends Controller
             ->with('mensagem.sucesso', "Cliente {$cliente->name} atualizado com sucesso!");
     }
 }
+
