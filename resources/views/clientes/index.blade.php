@@ -1,5 +1,5 @@
 <x-layout title="Clientes">
-    <a href="{{ route('clientes.create') }}" class="btn btn-dark mb-2">Adicionar cliente</a>
+    
 
     @isset($mensagemSucesso)
         <div class="alert alert-success">
@@ -26,5 +26,7 @@
             </li>
         @endforeach
     </ul>
+    <br><br>
+    <a href="{{ route('clientes.create') }}" class="btn btn-dark mb-2">Adicionar Pessoa Fisíca</a>
 
 </x-layout>
