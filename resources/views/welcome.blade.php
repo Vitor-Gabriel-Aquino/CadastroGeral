@@ -37,11 +37,11 @@
     <div class="background-imagem"></div>
     <div class="container-background depth-div">
         <div class="centro">
-            <a href="/clientes" class="btn btn-dark mb-2"><strong>Visualizar Clientes</strong></a>
+            <a href="{{ route('clientes.index') }}" class="btn btn-dark mb-2"><strong>Visualizar Clientes</strong></a>
         </div>
 
         <div class="centro">
-            <a href="/clientes/create" class="btn btn-dark mb-2"><strong>Cadastrar Clientes</strong></a>
+            <a href="{{ route('clientes.create') }}" class="btn btn-dark mb-2"><strong>Cadastrar Clientes</strong></a>
         </div>
 
         <div class="centro">
