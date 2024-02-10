@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/clientes', ClientesController::class)->only(['index', 'create', 'store', 'destroy']);
+Route::resource('/clientes', ClientesController::class)->except(['show']);
