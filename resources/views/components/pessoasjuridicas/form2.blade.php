@@ -9,37 +9,30 @@
     
 
         <!-- Informações Pessoais -->
-        <div class="row">
-            <div class="col-lg-3">
+<div class="row">
+    <div class="col-lg-3">
                 <label for="name" class="form-label">Nome da Empresa</label>
                 <input type="text" class="form-control form-control-sm"  
                 id="name" 
                 name="name"
-                @isset($name)value="{{ $name }}" @endisset> 
-            </div>
-        </div>
+                @isset($name)value="{{ $name }}" @endisset>
+    </div>
 
-        <!-- Dados de Identificação -->
-        <div class="row">
-            <div class="col">
+    <div class="col-lg-3">
                 <label for="cnpj" class="form-label">CNPJ</label>
                 <input type="text" class="form-control form-control-sm"
                  id="cnpj" 
                  name="cnpj"
                  @isset($cnpj)value='{{ $cnpj }}' @endisset>
-            </div>
-        </div>
-
-        <!-- Contato -->
-        <div class="row">
-            <div class="col">
+     </div>
+     <div class="col-lg-6">
                 <label for="company_phone" class="form-label">Celular</label>
                 <input type="company_phone" class="form-control form-control-sm"
                  id="company_phone" 
                  name="company_phone"
                  @isset($company_phone)value='{{ $company_phone }}' @endisset>
-            </div>
-        </div>
+     </div>
+</div>
 
         <!-- Endereço -->
         <div class="row">
