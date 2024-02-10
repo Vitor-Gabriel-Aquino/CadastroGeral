@@ -8,60 +8,46 @@ use App\Models\Funcionario;
 
 class FuncionarioController extends Controller
 {
-    public function index(Request $request)
-    {
-        $cliente = Cliente::query()
-            // ->where('ativo', true)  // Adiciona a condição para clientes ativos
-            ->orderBy('name')
-            ->get();
-
-        $mensagemSucesso = session('mensagem.sucesso');
-
-
-        return view('clientes.index')->with('clientes', $cliente)->with('mensagemSucesso', $mensagemSucesso);
-    }
 
     public function create(Request $request)
     {
 
-        return view('clientes.create');
+        return view('funcionarios.create');
     }
 
     public function store(Request $request)
     {
-
-        $cliente = Cliente::create($request->all());
-
-        return to_route('clientes.index')
-            ->with('mensagem.sucesso', "Cliente {$cliente->name} adicionado com sucesso!");
+        $funcionario = Funcionario::create($request->all());
+    
+        return redirect()->route('pessoasjuridicas.create')
+            ->with('mensagem.sucesso', "Funcionário {$funcionario->name} adicionado com sucesso!");
     }
+    
 
-    public function destroy(Cliente $cliente)
+    public function destroy(Funcionario $funcionarios)
     {
 
-        // $cliente = Cliente::find($request->cliente);
+        // $funcionarios = Funcionario::find($request->funcionarios);
 
-        // if ($cliente) {
-        //     $cliente->update(['ativo' => false]);
+        // if ($funcionarios) {
+        //     $funcionarios->update(['ativo' => false]);
         // }
 
-        $cliente->delete();
+        $funcionarios->delete();
 
-        return redirect()->route('clientes.index')
-            ->with('mensagem.sucesso', "Cliente {$cliente->name} removido com sucesso!");
+        return redirect()->route('pessoasjuridicas.index')
+            ->with('mensagem.sucesso', "O funcionario {$funcionarios->name} removido com sucesso!");
     }
 
-    public function edit(Cliente $cliente) {
-        return view('clientes.edit')->with('cliente', $cliente);
+    public function edit(Funcionario $funcionarios) {
+        return view('funcionarios.edit')->with('funcionarios', $funcionarios);
     }
 
-    public function update(Cliente $cliente, Request $request) {
+    public function update(Funcionario $funcionarios, Request $request) {
         
-        $cliente->update($request->all());
+    $funcionarios->update($request->all());
 
-
-        return to_route('clientes.index')
-            ->with('mensagem.sucesso', "Cliente {$cliente->name} atualizado com sucesso!");
-    }
+    return redirect()->route('pessoasjuridicas.index')
+        ->with('mensagem.sucesso', "O Funcionario {$funcionarios->name} atualizado com sucesso!");
 }
-
+}

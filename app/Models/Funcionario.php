@@ -9,5 +9,5 @@ class Funcionario extends Model
 {
     use HasFactory;
     protected $table = 'funcionarios';
-    protected $fillable = ['name', 'email', 'cpf', 'birthdate', 'cellphone','telephone'];
+    protected $fillable = ['name', 'email', 'cpf', 'cellphone'];
 }

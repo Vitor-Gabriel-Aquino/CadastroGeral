@@ -27,7 +27,7 @@
      </div>
      <div class="col-lg-6">
                 <label for="company_phone" class="form-label">Celular</label>
-                <input type="company_phone" class="form-control form-control-sm"
+                <input type="text" class="form-control form-control-sm"
                  id="company_phone" 
                  name="company_phone"
                  @isset($company_phone)value='{{ $company_phone }}' @endisset>
@@ -94,12 +94,20 @@
                  @isset($state)value='{{ $state }}' @endisset>
             </div>
         </div>
-    <!-- Botão de Adicionar Funcionário -->
+<!-- Botão de Adicionar Funcionário -->
 <div class="row">
     <div class="col">
-        <button id="addEmployeeButton" class="btn btn-secondary">Adicionar Funcionário</button>
+        <button type="button" id="addEmployeeButton" class="btn btn-secondary">Adicionar Funcionário</button>
     </div>
 </div>
+
+<script>
+    document.getElementById('addEmployeeButton').addEventListener('click', function() {
+        // Redirecionar para outra página
+        window.location.href = '{{ route("funcionarios.create") }}'; 
+    });
+</script>
+
 
 
 

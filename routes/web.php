@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route::resource('/clientes', ClientesController::class)->except(['show']);
 Route::resource('/pessoasjuridicas', PessoaJuridicaController::class)->except(['show']);
+Route::resource('/funcionarios', FuncionarioController::class)->except(['index', 'show']);
