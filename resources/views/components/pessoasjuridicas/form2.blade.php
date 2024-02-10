@@ -1,5 +1,6 @@
+
 <div class="container bg-light p-4">
-    <form action="{{ $action }}" method="post">
+    <form id="mainForm" action="{{ $action }}" method="post">
         @csrf 
 
     @isset($name)
@@ -99,6 +100,28 @@
     <div class="col">
         <button id="addEmployeeButton" class="btn btn-secondary">Adicionar Funcionário</button>
     </div>
+    <div id="employeeForm" style="display: none;">
+    <!-- Formulário para adicionar funcionário -->
+    <div class="row">
+        <div class="col-lg-2">
+            <label for="employee_name" class="form-label">Nome</label>
+            <input type="text" class="form-control form-control-sm" id="employee_name" name="employee_name">
+        </div>
+        <div class="col-lg-2">
+            <label for="employee_email" class="form-label">Email</label>
+            <input type="email" class="form-control form-control-sm" id="employee_email" name="employee_email">
+        </div>
+        <div class="col-lg-2">
+            <label for="employee_cpf" class="form-label">CPF</label>
+            <input type="text" class="form-control form-control-sm" id="employee_cpf" name="employee_cpf">
+        </div>
+        <div class="col-lg-6">
+            <label for="employee_cellphone" class="form-label">Celular</label>
+            <input type="text" class="form-control form-control-sm" id="employee_cellphone" name="employee_cellphone">
+        </div>
+
+    </div>
+</div>
 </div>
 
 
@@ -114,3 +137,35 @@
     </form>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#addEmployeeButton').click(function(event) {
+            // Prevenir a submissão do formulário principal
+            event.preventDefault();
+
+             // Toggle para exibir ou ocultar o formulário de funcionário
+            $('#employeeForm').toggle();
+
+            // Serializar dados do formulário do funcionário
+            var formData = $('#employeeForm').serialize();
+
+            // Enviar solicitação AJAX para salvar dados do funcionário
+            $.ajax({
+                url: '{{ route("funcionarios.store") }}', // Substitua "funcionarios.store" pela rota correta do seu controlador
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    // Manipular resposta de sucesso, se necessário
+                    console.log(response);
+                },
+                error: function(xhr) {
+                    // Manipular erro, se necessário
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
+
+   

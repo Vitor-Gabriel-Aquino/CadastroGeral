@@ -29,12 +29,15 @@ class FuncionarioController extends Controller
 
     public function store(Request $request)
     {
-
-        $cliente = Cliente::create($request->all());
-
-        return to_route('clientes.index')
-            ->with('mensagem.sucesso', "Cliente {$cliente->name} adicionado com sucesso!");
+        // Validar os dados recebidos, se necessário
+    
+        // Criar um novo funcionário com base nos dados recebidos
+        $funcionario = Funcionario::create($request->all());
+    
+        // Retornar uma resposta JSON indicando o sucesso
+        return response()->json(['success' => true, 'message' => 'Funcionário adicionado com sucesso']);
     }
+    
 
     public function destroy(Cliente $cliente)
     {
