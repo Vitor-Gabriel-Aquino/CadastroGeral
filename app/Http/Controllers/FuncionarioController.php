@@ -8,6 +8,20 @@ use App\Models\Funcionario;
 
 class FuncionarioController extends Controller
 {
+    
+    public function index(Request $request)
+    {
+        $funcionario = Funcionario::query()
+            // ->where('ativo', true)  // Adiciona a condição para clientes ativos
+            ->orderBy('name')
+            ->get();
+
+        $mensagemSucesso = session('mensagem.sucesso');
+
+
+        return view('clientes.index')->with('clientes', $funcionario)->with('mensagemSucesso', $mensagemSucesso);
+    }
+
 
     public function create(Request $request)
     {

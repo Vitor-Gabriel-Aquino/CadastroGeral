@@ -53,6 +53,7 @@ class ClientesController extends Controller
     }
 
     public function edit(Cliente $cliente) {
+
         return view('clientes.edit')->with('cliente', $cliente);
     }
 

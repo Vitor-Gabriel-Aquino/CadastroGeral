@@ -19,17 +19,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($pessoajuridica as $cliente)
+            @foreach ($pessoajuridica as $pessoajuridica)
                 <tr>
-                    <td>{{ $cliente->name }}</td>
-                    <td>{{ $cliente->cnpj }}</td>
-                    <td>{{ $cliente->email }}</td>
-                    <td>{{ $cliente->company_phone }}</td>
-                    <td>{{ $cliente->address }}</td>
+                    <td>{{ $pessoajuridica->name }}</td>
+                    <td>{{ $pessoajuridica->cnpj }}</td>
+                    <td>{{ $pessoajuridica->email }}</td>
+                    <td>{{ $pessoajuridica->company_phone }}</td>
+                    <td>{{ $pessoajuridica->address }}</td>
 
                     <td>
-                        <a href="{{ route('pessoasjuridicas.edit', $cliente->id) }}" class="btn btn-primary btn-sm">Editar</a>
-                        <form action="{{ route('pessoasjuridicas.destroy', $cliente->id) }}" method="post" class="">
+                        <a href="{{ route('pessoasjuridicas.edit', $pessoajuridica->id) }}" class="btn btn-primary btn-sm">Editar</a>
+
+                        <form action="{{ route('pessoasjuridicas.destroy', $pessoajuridica->id) }}" method="post" class="">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
@@ -40,3 +41,4 @@
         </tbody>
     </table>
 </x-layout>
+

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PessoaJuridica extends Model
 {
     use HasFactory;
-    protected $table = 'pessoa_juridica';
+    protected $table = 'pessoas_juridicas';
     protected $fillable = ['name', 'cnpj', 'company_phone', 'address',
-    'complement', 'number', 'neighborhood', 'zipCode', 'city', 'state', 'id_funcionario'];
+    'complement', 'number', 'neighborhood', 'zipCode', 'city', 'state', 'email'];
 }

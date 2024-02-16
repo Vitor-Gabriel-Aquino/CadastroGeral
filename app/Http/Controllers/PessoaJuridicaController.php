@@ -52,11 +52,12 @@ class PessoaJuridicaController extends Controller
     }
 
     public function edit(PessoaJuridica $pessoajuridica) {
+
         return view('pessoasjuridicas.edit')->with('pessoajuridica', $pessoajuridica);
     }
 
     public function update(PessoaJuridica $pessoajuridica, Request $request) {
-        
+
         $pessoajuridica->update($request->all());
 
 
@@ -65,3 +66,4 @@ class PessoaJuridicaController extends Controller
     }
 }
 
+ 
