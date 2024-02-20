@@ -12,5 +12,6 @@
     :neighborhood="$cliente->neighborhood"
     :zipCode="$cliente->zipCode"
     :city="$cliente->city"
-    :state="$cliente->state"/>
+    :state="$cliente->state"
+    :isEditing="true"/>
 </x-layout>
